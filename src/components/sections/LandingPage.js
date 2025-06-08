@@ -25,6 +25,19 @@ const LandingPage = () => {
         setIsHovering(false);
     };
 
+    // 마스크 효과 스타일
+    const hoverTextStyle = {
+        opacity: isHovering ? 1 : 0,
+        maskImage: isHovering
+            ? `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px,
+                rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)`
+            : 'none',
+        webkitMaskImage: isHovering
+            ? `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px,
+                rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)`
+            : 'none',
+    }
+
     return (
         <div className="min-h-screen">
             <div className="relative"
@@ -33,10 +46,15 @@ const LandingPage = () => {
                 onMouseLeave={ handleMouseLeave }
             >
                 {/* 첫 번째 레이어 */}
-                <h1 className="text-pink-100">Front-End</h1>
+                <h1 className="text-pink-100">
+                    Front-End
+                </h1>
 
                 {/* 두 번째 레이어 */}
-                <h1 className="absolute top-0 left-0 text-pink">Front-End</h1>
+                <h1 className="absolute top-0 left-0 text-pink" style={hoverTextStyle}>
+                    Front-End
+                </h1>
+
             </div>
         </div>
     );
