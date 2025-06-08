@@ -32,7 +32,7 @@ const LandingPage = () => {
             ? `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px,
                 rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)`
             : 'none',
-        webkitMaskImage: isHovering
+        WebkitMaskImage: isHovering
             ? `radial-gradient(circle 200px at ${mousePosition.x}px ${mousePosition.y}px,
                 rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)`
             : 'none',
@@ -41,7 +41,7 @@ const LandingPage = () => {
     // Front-End 타이틀 랜더링 함수
     const renderMainTitle = () => {
         return (
-            <h1 className="font-black text-6xl md:text8xl lg:text-9xl tracking-tighter">
+            <h1 className="font-black text-8xl lg:text-9xl tracking-tighter">
                 Front-End
             </h1>
         );
@@ -51,7 +51,8 @@ const LandingPage = () => {
         <div className="relative flex flex-col items-center justify-center min-h-screen px-4">
             <div className="max-w-4xl mx-auto text-center">
                 {/* Front-End 큰 제목 */}
-                <div className="relative cursor-pointer mb-8 lg:mb-1"
+                <div className="relative cursor-pointer mb-8 lg:mb-1 z-10"
+                    ref={ textRef }
                     onMouseMove={ handleMouseMove }
                     onMouseEnter={ handleMouseEnter }
                     onMouseLeave={ handleMouseLeave }
@@ -68,11 +69,10 @@ const LandingPage = () => {
                 </div>
 
                 {/* 서브 타이틀 */}
-                <div className="text-black font-medium">
-                    <p className="text-lg md:text-xl lg:text-2xl leading-relaxed">
+                <div className="text-black font-medium z-20">
+                    <p className="text-xl lg:text-3xl leading-relaxed -mt-14 lg:-mt-8">
                         문제 해결 능력을 갖춘 개발자 <b>이민영</b>입니다
                     </p>
-
                 </div>
             </div>
         </div>
