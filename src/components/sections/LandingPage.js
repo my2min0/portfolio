@@ -27,12 +27,16 @@ const LandingPage = () => {
 
     return (
         <div className="min-h-screen">
-            <div
+            <div className="relative"
                 onMouseMove={ handleMouseMove }
                 onMouseEnter={ handleMouseEnter }
                 onMouseLeave={ handleMouseLeave }
             >
-                <h1>Front-End</h1>
+                {/* 첫 번째 레이어 */}
+                <h1 className="text-pink-100">Front-End</h1>
+
+                {/* 두 번째 레이어 */}
+                <h1 className="absolute top-0 left-0 text-pink">Front-End</h1>
             </div>
         </div>
     );
