@@ -69,7 +69,7 @@ const LandingPage = () => {
                 </div>
 
                 {/* 서브 타이틀 */}
-                <div className="text-black font-medium z-20">
+                <div className="relative text-black font-medium z-20">
                     <p className="text-xl lg:text-3xl leading-relaxed -mt-14 lg:-mt-8">
                         문제 해결 능력을 갖춘 개발자 <b>이민영</b>입니다
                     </p>
