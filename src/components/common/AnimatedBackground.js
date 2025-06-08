@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { circlePatterns } from "../../utils/circlePatterns";
 
 const AnimatedBackground = ({ children }) => {
@@ -30,8 +30,78 @@ const AnimatedBackground = ({ children }) => {
         };
     };
 
+    // 초기 로딩 애니메이션
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            const initialCircles = Array.from({ length: 5 }, (_, index) =>
+                generateRandomCircle(index, 0)
+            );
+            setCircles(initialCircles);
+
+            // 애니메이션 시작
+            setTimeout(() => {
+                setCircles(prev => prev.map(circle => ({
+                    ...circle,
+                    opacity: 1,
+                    scale: 1,
+                })));
+                setIsInitialLoad(false);
+            }, 100);
+        }, 500);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        let ticking = false;
+    
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    const windowHeight = window.innerHeight;
+    
+                    if (scrollY > lastScrollY.current + windowHeight * 0.5) {
+                        const scrollOffset = Math.floor(scrollY / (windowHeight * 0.5));
+                        const newCircleIndex = circles.length;
+    
+                        if (circles.length < 15) {
+                            const newCircle = generateRandomCircle(newCircleIndex, scrollOffset);
+    
+                            setCircles(prev => {
+                                const updated = [...prev, newCircle];
+                                setTimeout(() => {
+                                    setCircles(innerPrev =>
+                                        innerPrev.map(circle =>
+                                            circle.id === newCircle.id
+                                                ? { ...circle, opacity: 1, scale: 1 }
+                                                : circle
+                                        )
+                                    );
+                                }, 100);
+                                return updated;
+                            });
+    
+                            lastScrollY.current = scrollY;
+                        }
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+    
+        if (!isInitialLoad) {
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }
+    
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isInitialLoad]);
+
     return (
-        <div className="relative min-h-screen">
+        <div ref={ containerRef } className="relative min-h-screen overflow-hidden">
+
             {/* 원 렌더링 영역 */}
             <div className="fixed inset-0 pointer-events-none z-10">
                 { circles.map((circle) => (
@@ -59,6 +129,17 @@ const AnimatedBackground = ({ children }) => {
             <div className="relative z-10">
                 {children}
             </div>
+
+            {/* 초기 로딩 오버레이 */}
+            { isInitialLoad && (
+                <div
+                    className="fixed inset-0 bg-white z-50 transition-opacity duration-1000"
+                    style={{
+                        opacity: isInitialLoad ? 1 : 0,
+                        pointerEvents: isInitialLoad ? 'all' : 'none',
+                    }}
+                />
+            )}
         </div>
     );
 };
