@@ -7,7 +7,14 @@ const LandingPage = () => {
     
     // 마우스 이벤트 핸들러
     const handleMouseMove = (e) => {
-        console.log('마우스 움직임!', e.clientX, e.clientY);
+        if (textRef.current) {
+            const rect = textRef.current.getBoundingClientRect();
+            setMousePosition({
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            });
+            console.log('상대 위치 : ', e.clientX - rect.left, e.clientY - rect.top);
+        }
     };
     const handleMouseEnter = () => {
         console.log('마우스 들어옴!');
