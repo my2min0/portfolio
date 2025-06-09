@@ -23,15 +23,15 @@ const AboutMe = () => {
     }
 
     return (
-        <div className="min-h-screen lg:min-h-[120vh] flex flex-col pt-32 lg:pt-20 px-4">
+        <div className="min-h-screen md:min-h-[120vh] flex flex-col pt-32 md:pt-20 px-4">
             <div className="flex">
-                <h3 className="text-3xl mt-2 mr-3 lg:text-5xl lg:mt-4">🍀 </h3>
+                <h3 className="text-3xl mt-2 mr-3 md:text-5xl md:mt-4">🍀 </h3>
                 {/* 상단 제목 - 마스크 효과 */}
                 <MaskText 
                     className="mb-12 text-left z-10"
                     maskSize={100}
                 >
-                    <h1 className="text-5xl lg:text-7xl font-black">
+                    <h1 className="text-5xl md:text-7xl font-black">
                         About Me
                     </h1>
                 </MaskText>
