@@ -24,21 +24,24 @@ const AboutMe = () => {
 
     return (
         <div className="min-h-screen lg:min-h-[120vh] flex flex-col pt-32 lg:pt-20 px-4">
-            {/* 상단 제목 - 마스크 효과 */}
-            <MaskText 
-                className="mb-8 text-left z-10"
-                maskSize={100}
-            >
-                <h1 className="text-4xl lg:text-7xl font-black">
-                    About Me
-                </h1>
-            </MaskText>
+            <div className="flex">
+                <h3 className="text-3xl mt-2 mr-3 lg:text-5xl lg:mt-4">🍀 </h3>
+                {/* 상단 제목 - 마스크 효과 */}
+                <MaskText 
+                    className="mb-12 text-left z-10"
+                    maskSize={100}
+                >
+                    <h1 className="text-5xl lg:text-7xl font-black">
+                        About Me
+                    </h1>
+                </MaskText>
+            </div>
 
             {/* 나머지 콘텐츠 중앙 정렬 */}
             <div className="flex flex-col items-center flex-1">
                 {/* 프로필 사진 */}
                 <div className="relative mb-8 flex justify-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
+                    <div className="w-60 h-60 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
                         <img src={isHovered ? "/images/Happy-Profile.png" : "/images/Temp-Profile.png" }alt="Profile" className="w-full h-full object-cover transition-all duration-300 ease-in-out"/>
                     </div>
                 </div>
