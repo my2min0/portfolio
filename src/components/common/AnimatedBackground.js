@@ -72,7 +72,7 @@ const AnimatedBackground = ({ children }) => {
                         
                         // 현재 스크롤 위치 기준으로 아래쪽에 원들 생성
                         const baseY = scrollY + windowHeight; // 현재 화면 아래쪽
-                        const numNewCircles = Math.floor(Math.random() * 7) + 2; // 4-6개
+                        const numNewCircles = Math.floor(Math.random() * 10) + 2;
 
                         const newCircles = Array.from({ length: numNewCircles }, (_, i) => {
                             const yOffset = Math.random() * windowHeight * 1.2; // 다음 화면 범위에
