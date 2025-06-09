@@ -54,7 +54,7 @@ const MaskText = ({
         WebkitMaskImage: isHovering
             ? `radial-gradient(circle ${maskSize}px at ${mousePosition.x}px ${mousePosition.y}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0) 100%)`
             : 'none',
-        color: "#00FF7F"
+        color: "#A7E9AF"
     };
 
     return (
