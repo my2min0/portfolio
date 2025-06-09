@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AboutMe = () => {
+    const [ isHovered, setIsHovered ] = useState(false);
     const hashtags = [
         "#문제_해결_능력",
         "#리더십",
@@ -15,7 +16,7 @@ const AboutMe = () => {
             {/* 프로필 사진 */}
             <div className="relative mb-8">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg bg-white">
-                    <img src="/images/Temp-Profile.png" alt="Profile" className="w-full h-full object-cover"/>
+                    <img src={isHovered ? "/images/Happy-Profile.png" : "/images/Temp-Profile.png" }alt="Profile" className="w-full h-full object-cover"/>
                 </div>
             </div>
 
@@ -28,7 +29,12 @@ const AboutMe = () => {
 
             {/* 팀원 리뷰 버튼 */}
             <div>
-                팀원 리뷰
+                <button
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    팀원 리뷰
+                </button>
             </div>
         </div>
     )
