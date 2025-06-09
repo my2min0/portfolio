@@ -18,15 +18,21 @@ const AnimatedBackground = ({ children }) => {
             size: pattern.size + ( Math.random() - 0.5 ) * 100,
         };
 
+        // 스크롤 위치에 따른 Y 좌표 계산
+        const windowHeight = window.innerHeight;
+        const currentScrollY = window.scrollY;
+        const baseY = scrollOffset === 0 
+                        ? pattern.initialY 
+                        : (currentScrollY / windowHeight) * 100 + (Math.random() * 80 + 10);
         return {
-            id: `circle-${index}-${scrollOffset}`,
+            id: `circle-${index}-${Date.now()}-${Math.random()}`,
             gradient: pattern.gradient,
             x: Math.max(0, Math.min(90, pattern.initialX + randomVariation.x)), // 0% ~ 90% 범위로 제한
-            y: pattern.initialY + ( scrollOffset / 100 ) + randomVariation.y, // 스크롤에 따라 Y 위치 조정
+            y: baseY + randomVariation.y, // 스크롤에 따라 Y 위치 조정
             size: Math.max(350, randomVariation.size), // 최소 크기 350px
             opacity: 0,
             scale: 0.5,
-            animationDelay: Math.random() * 0.8, // 0~0.8초 사이의 랜덤 딜레이
+            animationDelay: scrollOffset === 0 ? Math.random() * -.8 : 0, // 초기 로딩시, 딜레이
         };
     };
 
@@ -55,32 +61,39 @@ const AnimatedBackground = ({ children }) => {
         let ticking = false;
     
         const handleScroll = () => {
-            if (!ticking) {
+            if (!ticking && !isInitialLoad) {
                 requestAnimationFrame(() => {
                     const scrollY = window.scrollY;
                     const windowHeight = window.innerHeight;
     
-                    if (scrollY > lastScrollY.current + windowHeight * 0.5) {
-                        const scrollOffset = Math.floor(scrollY / (windowHeight * 0.5));
-                        const newCircleIndex = circles.length;
-    
-                        if (circles.length < 25) {
-                            const newCircle = generateRandomCircle(newCircleIndex, scrollOffset);
+                    // 스크롤 거리 기준을 더 작게 조정 (화면 높이의 30% 마다)
+                    const scrollThreshold = windowHeight * 0.3;
+
+                    if (scrollY > lastScrollY.current + scrollThreshold) {
+                        if (circles.length < 35) {
+                            const newCircleIndex = circles.length;
+                            const scrollOffset = Math.floor(scrollY / scrollThreshold);
+
+                            // 2~3개의 원을 동시 생성
+                            const newCircles = Array.from({ length: Math.floor(Math.random() * 2) + 2 }, (_, i) =>
+                                generateRandomCircle(newCircleIndex + i, scrollOffset)
+                            );
     
                             setCircles(prev => {
-                                const updated = [...prev, newCircle];
-                                setTimeout(() => {
-                                    setCircles(innerPrev =>
-                                        innerPrev.map(circle =>
-                                            circle.id === newCircle.id
-                                                ? { ...circle, opacity: 1, scale: 1 }
-                                                : circle
-                                        )
-                                    );
-                                }, 100);
+                                const updated = [...prev, ...newCircles];
+
+                                // 새 원들을 순차적으로 나타나게 함
+                                newCircles.forEach((newCircle, i) => {
+                                    setTimeout(() => {
+                                        setCircles(innerPrev =>
+                                            innerPrev.map(circle => 
+                                                circle.id === newCircle.id  ? { ...circle, opacity: 1, scale: 1 } : circle
+                                            )
+                                        );
+                                    }, 100 + (i * 200)); // 각 원마다 200ms 간격
+                                });
                                 return updated;
                             });
-    
                             lastScrollY.current = scrollY;
                         }
                     }
@@ -89,15 +102,10 @@ const AnimatedBackground = ({ children }) => {
                 ticking = true;
             }
         };
-    
-        if (!isInitialLoad) {
-            window.addEventListener('scroll', handleScroll, { passive: true });
-        }
-    
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [isInitialLoad]);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isInitialLoad, circles.length]);
 
     return (
         <div ref={ containerRef } className="relative min-h-screen overflow-hidden">
@@ -126,7 +134,7 @@ const AnimatedBackground = ({ children }) => {
             </div>
 
             {/* 메인 콘텐츠 */}
-            <div className="relative z-10">
+            <div className="relative z-20">
                 {children}
             </div>
 
