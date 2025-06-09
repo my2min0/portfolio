@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 const AboutMe = () => {
     const [ isHovered, setIsHovered ] = useState(false);
+    const [ isModalOpen, setIsModalOpen ] = useState(false);
+
     const hashtags = [
         "#문제_해결_능력",
         "#리더십",
@@ -9,6 +11,14 @@ const AboutMe = () => {
         "#풀스택_교육_이수",
         "#책임감"
     ];
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
 
     return (
         <div className="min-h-screen flex flex-col item-center pt-20 px-4">
