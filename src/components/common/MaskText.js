@@ -9,19 +9,39 @@ const MaskText = ({
     const [ isHovering, setIsHovering ] = useState(false);
     const textRef = useRef(null);
 
-    // 마우스 이동 이벤트 핸들러
-    const handleMouseMove = (e) => {
+    // 위치 업데이트 공통 함수
+    const updatePosition = (clientX, clientY) => {
         if (textRef.current) {
             const rect = textRef.current.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
             setMousePosition({ x, y });
         }
+    };
+
+    // 마우스 이동 이벤트 핸들러
+    const handleMouseMove = (e) => {
+        updatePosition(e.clientX, e.clientY);
     };
     const handleMouseEnter = () => {
         setIsHovering(true);
     };
     const handleMouseLeave = () => {
+        setIsHovering(false);
+    };
+
+    // 터치 이벤트 핸들러
+    const handleTouchMove = (e) => {
+        e.preventDefault(); // 스크롤 방지
+        const touch = e.touches[0];
+        updatePosition(touch.clientX, touch.clientY);
+    };
+    const handleTouchStart = (e) => {
+        setIsHovering(true);
+        const touch = e.touches[0];
+        updatePosition(touch.clientX, touch.clientY);
+    };
+    const handleTouchEnd = () => {
         setIsHovering(false);
     };
 
@@ -44,6 +64,9 @@ const MaskText = ({
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onTouchMove={handleTouchMove}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
         >
             {/* 첫 번째 레이어 - 기본 텍스트 */}
             <div 
