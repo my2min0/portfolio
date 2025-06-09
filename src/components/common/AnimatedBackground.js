@@ -33,7 +33,7 @@ const AnimatedBackground = ({ children }) => {
     // 초기 로딩 애니메이션
     useEffect(() => {
         const timer = setTimeout(() => {
-            const initialCircles = Array.from({ length: 5 }, (_, index) =>
+            const initialCircles = Array.from({ length: 8 }, (_, index) =>
                 generateRandomCircle(index, 0)
             );
             setCircles(initialCircles);
@@ -64,7 +64,7 @@ const AnimatedBackground = ({ children }) => {
                         const scrollOffset = Math.floor(scrollY / (windowHeight * 0.5));
                         const newCircleIndex = circles.length;
     
-                        if (circles.length < 15) {
+                        if (circles.length < 25) {
                             const newCircle = generateRandomCircle(newCircleIndex, scrollOffset);
     
                             setCircles(prev => {
