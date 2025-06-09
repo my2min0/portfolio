@@ -86,7 +86,6 @@ const AnimatedBackground = ({ children }) => {
                             setTimeout(() => {
                                 setCircles(innerPrev =>
                                     innerPrev.map(circle => {
-                                        const isNewCircle = newCircles.some(nc => nc.id === circle.id);
                                         return { ...circle, opacity: 1, scale: 1 };
                                     })
                                 );
