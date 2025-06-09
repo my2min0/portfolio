@@ -58,12 +58,12 @@ const LandingPage = () => {
                     onMouseLeave={ handleMouseLeave }
                 >
                     {/* 첫 번째 레이어 */}
-                    <div className="text-pink-100 leading-none select-none">
+                    <div className="text-white leading-none select-none drop-shadow-md">
                         { renderMainTitle() }
                     </div>
 
                     {/* 두 번째 레이어 : 마우스 위치에 따라 마스크 효과 적용 */}
-                    <div className="absolute text-pink-400 top-0 left-0 leading-none transition-opacity duration-300 select-none" style={ hoverTextStyle }>
+                    <div className="absolute text-pink-300 top-0 left-0 leading-none transition-opacity duration-300 select-none" style={ hoverTextStyle }>
                         { renderMainTitle() }
                     </div>
                 </div>
