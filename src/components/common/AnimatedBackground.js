@@ -45,7 +45,7 @@ const AnimatedBackground = ({ children }) => {
                 setCircles(prev => prev.map(circle => ({
                     ...circle,
                     opacity: 1,
-                    scale: 1.5,
+                    scale: 1,
                 })));
                 setIsInitialLoad(false);
             }, 100);
@@ -87,13 +87,7 @@ const AnimatedBackground = ({ children }) => {
                                 setCircles(innerPrev =>
                                     innerPrev.map(circle => {
                                         const isNewCircle = newCircles.some(nc => nc.id === circle.id);
-                                        if (isNewCircle) {
-                                            // 새 원은 즉시 표시
-                                            return { ...circle, opacity: 1, scale: 1 };
-                                        } else {
-                                            // 기존 원들은 150%로 확대
-                                            return { ...circle, scale: 1.5 };
-                                        }
+                                        return { ...circle, opacity: 1, scale: 1 };
                                     })
                                 );
                             }, 50);
