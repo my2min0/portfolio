@@ -5,7 +5,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="relative bg-white rounded-2xl max-w-md md:max-w-2xl w-full mx-4 shadow-2xl aspect-[16/10]">
+            <div className="relative bg-white rounded-2xl max-w-md aspect-[16/12] md:max-w-2xl md:aspect-[16/10] w-full mx-4 shadow-2xl">
                 {/* 맥북 사파리 st 헤더 */}
                 <div className="bg-gray-200 rounded-t-lg p-3 w-full group">
                     <div className="flex items-center space-x-2" onClick={onClose}>
@@ -31,16 +31,31 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </div>
                         </div>
                         {/* 팀원 리뷰 타이틀 */}
-                        <p className="absolute left-[53%] top-[3.5%] text-sm sm:top-[2.5%] sm:text-base md:left-[65%] md:top-[1.5%] md:text-xl font-bold text-[#1B5E20] mb-4">Team Talks: About Me !</p>
+                        <div className="absolute inset-0 flex items-top justify-end pointer-events-none pt-[6px] pr-[8px]">
+                            <p className="text-xl font-bold text-[#1B5E20]">Team Talks: About Me !</p>
+                        </div>
                     </div>
                 </div>
 
                 {/* 팀원 리뷰 메인 공간 */}
-                <div className="absolute top-[20%] md:top-[15%] left-[18%] bg-[#D7F9DF] w-[130px] md:w-[190px] drop-shadow-lg p-4">
-                    <p className="absolute text-lg md:text-2xl top-[-14%] md:top-[-15%] left-[45%]">🍀</p>
-                    <p className="text-[10px] md:text-sm text-[#1B5E20] mb-2">@천재동기 우OO</p>
-                    <p className="text-xs md:text-base">민영님 최고<br/></p>
+                <div className="relative min-h-[300px] md:min-h-[400px] bg-gray-50 rounded-b-xl overflow-hidden">
+                    {/* 팀원 리뷰 메인 공간 - 컨테이너 크기에 따른 반응형 */}
+                    <div className="absolute bg-[#D7F9DF] drop-shadow-lg p-3 md:p-4 rounded-sm
+                                    top-[8%] left-[18%] w-[28%] max-w-[180px]">
+                        <div className="absolute text-md md:text-2xl -top-[21%] md:-top-[18%] left-[50%] transform -translate-x-1/2">
+                            🍀
+                        </div>
+                        <p className="text-[10px] md:text-sm text-[#1B5E20] mb-1 md:mb-2 font-medium">
+                            @천재동기 우OO
+                        </p>
+                        <p className="text-xs md:text-base leading-tight">
+                            민영님 최고
+                        </p>
+                    </div>
                 </div>
+
+
+                
                 
             </div>
         </div>
