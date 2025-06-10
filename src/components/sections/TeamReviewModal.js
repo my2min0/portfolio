@@ -48,11 +48,11 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                         e.target.style.setProperty('--webkit-scrollbar', 'none'); // Chrome, Safari에서 스크롤바 숨기기
                     }}
                 >
-                    <div className="p-4 md:p-6 space-y-4 md:space-y-6">
+                    <div className="p-4 md:p-6 relative h-[420px] md:h-[600px]">
                         {/* 민혁님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 top-[8%] left-[15%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#A7E9AF] drop-shadow-lg w-[30%] rounded-sm
+                                        p-3 top-[1%] left-[15%]
+                                        md:p-4 md:top-[1%] md:left-[15%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
@@ -68,15 +68,15 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </p>
                         </div>
                         {/* 예진님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 -top-[85px] left-[59%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#B9FBC0] drop-shadow-lg w-[35%] rounded-sm
+                                        p-3 -top-[75px] left-[52%]
+                                        md:p-4 md:-top-[100px] md:left-[52%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
                                 🍀
                             </div>
-                            <p className="text-[#1B5E20] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
+                            <p className="text-[#00695C] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
                                 @천재교육 이OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
@@ -86,15 +86,15 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </p>
                         </div>
                         {/* 광훈님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 -top-[110px] left-[20%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#DFFFD6] drop-shadow-lg w-[33%] rounded-sm
+                                        p-3 -top-[70px] left-[17%]
+                                        md:p-4 md:-top-[110px] md:left-[16%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
                                 🍀
                             </div>
-                            <p className="text-[#1B5E20] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
+                            <p className="text-[#355E3B] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
                                 @천재교육 최OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
@@ -104,15 +104,15 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </p>
                         </div>
                         {/* 다인님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 -top-[185px] left-[54%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#A7E9AF] drop-shadow-lg w-[30%] rounded-sm
+                                        p-3 -top-[130px] left-[54%]
+                                        md:p-4 md:-top-[190px] md:left-[54%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
                                 🍀
                             </div>
-                            <p className="text-[#1B5E20] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
+                            <p className="text-[#134E4A] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
                                 @천재교육 정OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
@@ -121,15 +121,15 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </p>
                         </div>
                         {/* oo님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 -top-[155px] left-[18%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#B2F2BB] drop-shadow-lg w-[28%] rounded-sm
+                                        p-3 -top-[115px] left-[13%]
+                                        md:p-4 md:-top-[180px] md:left-[18%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
                                 🍀
                             </div>
-                            <p className="text-[#1B5E20] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
+                            <p className="text-[#14532D] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
                                 @팀장 김OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
@@ -139,15 +139,15 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </p>
                         </div>
                         {/* oo님 리뷰 */}
-                        <div className="relative bg-[#D7F9DF] drop-shadow-lg w-[28%] max-w-[180px] rounded-sm
-                                        p-3 -top-[300px] left-[58%]
-                                        md:p-4 md:top-[8%] md:left-[18%] ">
+                        <div className="relative bg-[#C6F6D5] drop-shadow-lg w-[28%] rounded-sm
+                                        p-3 -top-[190px] left-[48%]
+                                        md:p-4 md:-top-[290px] md:left-[51%] ">
                             <div className="absolute left-[50%] transform -translate-x-1/2
                                             text-md -top-[13%]
                                             md:text-2xl md:-top-[10%]">
                                 🍀
                             </div>
-                            <p className="text-[#1B5E20] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
+                            <p className="text-[#22543D] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
                                 @동료 박OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
@@ -155,9 +155,6 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                                 팀원이에요!
                             </p>
                         </div>
-
-                        {/* 하단 여백 */}
-                        <div className="h-4"></div>
                     </div>
                 </div>
 
