@@ -30,14 +30,16 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                                 </svg>
                             </div>
                         </div>
+                        {/* 팀원 리뷰 타이틀 */}
+                        <p className="absolute left-[56%] top-[3.3%] text-sm sm:top-[2.5%] sm:text-base md:left-[65%] md:top-[1.5%] md:text-xl font-bold text-[#1B5E20] mb-4">Team Talks: About Me !</p>
                     </div>
                 </div>
 
-                <p className="absolute top-[13%] left-[65%] md:top-[10%] text-md md:text-2xl font-bold text-[#1B5E20] mb-4">Team Talks<br/>: About Me !</p>
-                <div className="absolute top-[20%] md:top-[15%] left-[18%] bg-[#A7E9AF] w-[170px] md:w-[190px] drop-shadow-lg p-4">
-                    <p className="absolute text-xl md:text-2xl top-[-12%] md:top-[-15%] left-[45%]">🍀</p>
-                    <p className="text-xs md:text-sm text-[#1B5E20] mb-2">@천재동기 우OO</p>
-                    <p className="text-sm md:text-base">민영님 최고<br/></p>
+                {/* 팀원 리뷰 메인 공간 */}
+                <div className="absolute top-[20%] md:top-[15%] left-[18%] bg-[#D7F9DF] w-[130px] md:w-[190px] drop-shadow-lg p-4">
+                    <p className="absolute text-lg md:text-2xl top-[-14%] md:top-[-15%] left-[45%]">🍀</p>
+                    <p className="text-[10px] md:text-sm text-[#1B5E20] mb-2">@천재동기 우OO</p>
+                    <p className="text-xs md:text-base">민영님 최고<br/></p>
                 </div>
                 
             </div>
