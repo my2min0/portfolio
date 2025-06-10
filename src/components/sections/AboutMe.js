@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TeamReviewModal from "./TeamReviewModal";
 import MaskText from "../common/MaskText";
 
@@ -13,6 +13,21 @@ const AboutMe = () => {
         "#풀스택_교육_이수",
         "#책임감"
     ];
+
+    useEffect(() => {
+        if (isModalOpen) {
+            // 모달이 열릴 때 스크롤 방지
+            document.body.style.overflow = "hidden";
+        } else {
+            // 모달이 닫힐 때 스크롤 복원
+            document.body.style.overflow = "unset";
+        }
+
+        // 컴포넌트 언마운트 시 스크롤 복원
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isModalOpen]);
 
     const openModal = () => {
         setIsModalOpen(true);
