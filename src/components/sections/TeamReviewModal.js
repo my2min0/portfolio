@@ -31,7 +31,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             </div>
                         </div>
                         {/* 팀원 리뷰 타이틀 */}
-                        <p className="absolute left-[56%] top-[3.3%] text-sm sm:top-[2.5%] sm:text-base md:left-[65%] md:top-[1.5%] md:text-xl font-bold text-[#1B5E20] mb-4">Team Talks: About Me !</p>
+                        <p className="absolute left-[53%] top-[3.5%] text-sm sm:top-[2.5%] sm:text-base md:left-[65%] md:top-[1.5%] md:text-xl font-bold text-[#1B5E20] mb-4">Team Talks: About Me !</p>
                     </div>
                 </div>
 
