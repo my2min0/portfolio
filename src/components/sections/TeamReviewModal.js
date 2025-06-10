@@ -7,7 +7,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
             <div className="relative bg-white rounded-2xl max-w-md aspect-[16/12] md:max-w-2xl md:aspect-[16/10] w-full mx-4 shadow-2xl flex flex-col">
                 {/* 맥북 사파리 st 헤더 */}
-                <div className="bg-gray-200 rounded-t-lg p-3 w-full group">
+                <div className="bg-gray-200 rounded-t-2xl p-3 w-full group">
                     <div className="flex items-center space-x-2" onClick={onClose}>
                         <div className="relative w-4 h-4 rounded-full bg-red-400 hover:bg-red-500 cursor-pointer transition-colors">
                             <div className="absolute inset-0 text-red-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -18,7 +18,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                         </div>
                         <div className="relative w-4 h-4 rounded-full bg-yellow-500 hover:bg-yellow-600 cursor-pointer transition-colors">
                             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#B8860B" class="size-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#777711" class="size-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
                                 </svg>
                             </div>
