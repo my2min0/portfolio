@@ -120,7 +120,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                                 정말 즐거워요!<br/>
                             </p>
                         </div>
-                        {/* oo님 리뷰 */}
+                        {/* 민호님 리뷰 */}
                         <div className="relative bg-[#B2F2BB] drop-shadow-lg w-[28%] rounded-sm
                                         p-3 -top-[115px] left-[13%]
                                         md:p-4 md:-top-[180px] md:left-[18%] ">
@@ -130,12 +130,10 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                                 🍀
                             </div>
                             <p className="text-[#14532D] font-medium text-[10px] mb-1  md:text-sm md:mb-2">
-                                @팀장 김OO
+                                @천재교육 김OO
                             </p>
                             <p className="text-xs md:text-base leading-tight">
-                                항상 팀을 위해<br/>
-                                먼저 나서주는 민영님!<br/>
-                                고마워요 😊
+                                저는 살면서 이렇게 논리적으로 말을 잘하는 사람을 본 적이 없어요. 자기 일을 잘하는 건 그렇다고 해도 사람이 알게 모르게 따뜻한 건 반칙이에요.
                             </p>
                         </div>
                         {/* oo님 리뷰 */}
