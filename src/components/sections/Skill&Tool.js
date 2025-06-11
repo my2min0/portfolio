@@ -105,7 +105,7 @@ const SkillAndTool = () => {
                             >
                                 {/* 카드 내용 */}
                                 <div className="h-full flex flex-col justify-center items-center text-center">
-                                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">
+                                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">
                                         { card.title }
                                     </h2>
                                 </div>
