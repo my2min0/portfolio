@@ -72,7 +72,7 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             className="bg-[#DFFFD6] w-[33%] -top-[70px] left-[17%] md:-top-[110px] md:left-[16%]"
                             textColor="#355E3B"
                             name="@천재교육 최OO"
-                            review="민영님은 항상 문제를 해결하는 데 창의적인 접근을 해요!"
+                            review="프론트엔드 리더를 맡아주신 덕분에 저는 인프라나 다른 문제 상황에 더 집중할 수 있었어요. 디자인 감각까지 뛰어난 민영님! 다음에도 함께 프로젝트 해요~!"
                         />
                         <ReviewMemo
                             className="bg-[#A7E9AF] w-[30%] -top-[130px] left-[54%] md:-top-[190px] md:left-[54%]"
@@ -81,13 +81,13 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                             review="함께 일하는 게 정말 즐거워요!"
                         />
                         <ReviewMemo
-                            className="bg-[#B2F2BB] w-[28%] -top-[115px] left-[13%] md:-top-[180px] md:left-[18%]"
+                            className="bg-[#B2F2BB] w-[35%] -top-[115px] left-[13%] md:-top-[180px] md:left-[18%]"
                             textColor="#14532D"
                             name="@천재교육 김OO"
                             review="저는 살면서 이렇게 논리적으로 말을 잘하는 사람을 본 적이 없어요. 자기 일을 잘하는 건 그렇다고 해도 사람이 알게 모르게 따뜻한 건 반칙이에요."
                         />
                         <ReviewMemo
-                            className="bg-[#C6F6D5] w-[28%] -top-[190px] left-[48%] md:-top-[290px] md:left-[51%]"
+                            className="bg-[#C6F6D5] w-[28%] -top-[190px] left-[55%] md:-top-[290px] md:left-[57%]"
                             textColor="#22543D"
                             name="@동료 박OO"
                             review="꼼꼼하고 신뢰할 수 있는 팀원이에요!"
