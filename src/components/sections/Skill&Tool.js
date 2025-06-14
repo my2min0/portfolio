@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MaskText from "../common/MaskText";
+import Clover from "../common/Clover";
 
 const SkillAndTool = () => {
     const [ currentIndex, setCurrentIndex ] = useState(0);
@@ -79,7 +80,7 @@ const SkillAndTool = () => {
                     maskSize={100}
                 >
                     <div className="flex items-center gap-3 ml-2 md:ml-7">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clover-icon lucide-clover"><path d="M16.17 7.83 2 22"/><path d="M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12"/><path d="m7.83 7.83 8.34 8.34"/></svg>
+                        <Clover/>
                         <h1 className="text-5xl md:text-7xl font-black">
                             Skill & Tool
                         </h1>
@@ -110,10 +111,52 @@ const SkillAndTool = () => {
                                 style={ getCardStyle(index) }
                             >
                                 {/* 카드 내용 */}
-                                <div className="h-full flex flex-col justify-center items-center text-center">
-                                    <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">
+                                <div className="h-full">
+                                    <h2 className="flex flex-col items-center text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">
                                         { card.title }
                                     </h2>
+
+                                    {/* Proficient 섹션 */}
+                                    <div className="mb-4 w-full">
+                                        <h3 className="text-base md:text-lg font-semibold text-green-600 mb-2">
+                                            Proficient
+                                        </h3>
+                                        <div className="flex flex-wrap justify-center gap-2">
+                                            {card.proficient.map((skill, index) => (
+                                                <span key={index} className="bg-green-100 text-green-800 px-2 py-1 rounded-md text-sm">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Familiar 섹션 */}
+                                    <div className="mb-4 w-full">
+                                        <h3 className="text-base md:text-lg font-semibold text-blue-600 mb-2">
+                                            Familiar
+                                        </h3>
+                                        <div className="flex flex-wrap justify-center gap-2">
+                                            {card.familiar.map((skill, index) => (
+                                                <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded-md text-sm">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Tried 섹션 */}
+                                    <div className="w-full">
+                                        <h3 className="text-base md:text-lg font-semibold text-gray-600 mb-2">
+                                            Tried
+                                        </h3>
+                                        <div className="flex flex-wrap justify-center gap-2">
+                                            {card.tried.map((skill, index) => (
+                                                <span key={index} className="bg-gray-100 text-gray-800 px-2 py-1 rounded-md text-sm">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
