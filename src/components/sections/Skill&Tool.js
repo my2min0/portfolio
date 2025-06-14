@@ -9,18 +9,24 @@ const SkillAndTool = () => {
     const cards = [
         {
             id: 1,
-            title: "Language / Framework / Library",
-            content: "JavaScript, TypeScript, React, Next.js, Redux, Node.js, Express"
+            title: "Programming Languages & Database",
+            proficient: ["Java", "JavaScript", "Oracle SQL"],
+            familiar: ["Python"],
+            tried: ["MyBatis", "JDBC", "JPA"]
         },
         {
             id: 2,
-            title: "Tools / ",
-            content: "Git, GitHub, Figma, Postman, VSCode, Webpack, Babel"
+            title: "Framework & Library",
+            proficient: ["React.js", "Vue.js", "HTML", "CSS", "Spring Boot"],
+            familiar: ["JSP", "Servlet"],
+            tried: ["JWT"]
         },
         {
             id: 3,
-            title: "Design / Animation",
-            content: "CSS, Tailwind CSS, Framer Motion, GSAP"
+            title: "Development Tools & Collaboration",
+            proficient: ["GitHub", "Notion", "Visual Studio Code", "IntelliJ IDEA", "ERD Cloud", "SQL Developer"],
+            familiar: ["Figma", "Eclipse"],
+            tried: ["DBeaver", "Swaggeer"]
         }
     ];
 
