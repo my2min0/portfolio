@@ -7,11 +7,7 @@ const ReviewMemo = ({
     review = "",
 }) => {
     return (
-        <div className={`relative drop-shadow-lg rounded-sm p-3 md:p-4 ${className}`}>
-            <div className="absolute left-[50%] transform -translate-x-1/2 
-                            text-md -top-[13%] md:text-2xl md:-top-[10%]">
-                🍀
-            </div>
+        <div className={`relative drop-shadow-lg rounded-sm p-2 md:p-4 ${className}`}>
             <p className={`text-[${textColor}] font-medium text-[10px] mb-1 md:text-sm md:mb-2`}>
                 {name}
             </p>

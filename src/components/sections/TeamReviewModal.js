@@ -49,52 +49,61 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                         e.target.style.setProperty('--webkit-scrollbar', 'none'); // Chrome, Safari에서 스크롤바 숨기기
                     }}
                 >
-                    <div className="p-4 md:p-6 relative h-[420px] md:h-[600px]">
+                    <div className="p-4 md:p-6 relative">
                         {/* <ReviewMemo
-                            className="bg-[#] w-[%] -top-[] left-[] md:-top-[] md:left-[]"
+                            className="bg-[#]"
                             textColor="#"
                             name=""
                             review=""
                         /> */}
-                        <ReviewMemo
-                            className="bg-[#A7E9AF] w-[30%] top-[1%] left-[15%] md:top-[1%] md:left-[15%]"
-                            textColor="#1B5E20"
-                            name="@천재교육 우OO"
-                            review="프로젝트를 같이 하면서 책임감이 남다르다 라는 생각을 했습니다. 주어진 문제에 대한 해결 능력이 뛰어나며 회의나 기획적인 부분에서도 적극적으로 논리 정연하게 의견을 내고 좋은 결과물로 인도할 의견을 냅니다. 어떤 곳에서든 필요한 인재라고 생각합니다."
-                        />
-                        <ReviewMemo
-                            className="bg-[#B9FBC0] w-[35%] -top-[75px] left-[52%] md:-top-[100px] md:left-[52%]"
-                            textColor="#00695C"
-                            name="@천재교육 이OO"
-                            review="맡은 일은 끝까지 책임지는 자세로, 빠진 기획도 먼저 찾아내고 팀과 조율해 반영했습니다.
-                            화면 컴포넌트나 폴더 구조 등 개발 시 팀의 편의를 고려해 체계적으로 일했습니다.
-                            회의에서 흐름이 어지러울 때 정확한 주제를 잡고 방향성을 정리해주는 역할을 했습니다.
-                            정리에 강해 문서 정리는 대부분 맡았고, 팀원 모두가 신뢰할 만큼 일처리가 정확했습니다."
-                        />
-                        <ReviewMemo
-                            className="bg-[#DFFFD6] w-[33%] -top-[70px] left-[17%] md:-top-[110px] md:left-[16%]"
-                            textColor="#355E3B"
-                            name="@천재교육 최OO"
-                            review="프론트엔드 리더를 맡아주신 덕분에 저는 인프라와 다른 문제 상황에 더 집중할 수 있었어요. 특히 디자인과 관련된 부분에서는 디자이너에 버금가는 미적 감각과 프론트엔드에 대한 깊은 이해를 바탕으로 완성도를 높여 나가는 모습이 인상적이었습니다. 주도적으로 해결책을 찾아가고, 의견을 적극적으로 표현해 주셔서 정말 든든했습니다. 다음에도 함께 프로젝트 해요~!"
-                        />
-                        <ReviewMemo
-                            className="bg-[#A7E9AF] w-[30%] -top-[130px] left-[54%] md:-top-[190px] md:left-[54%]"
-                            textColor="#134E4A"
-                            name="@천재교육 정OO"
-                            review="함께 일하는 게 정말 즐거워요!"
-                        />
-                        <ReviewMemo
-                            className="bg-[#B2F2BB] w-[35%] -top-[115px] left-[13%] md:-top-[180px] md:left-[18%]"
-                            textColor="#14532D"
-                            name="@천재교육 김OO"
-                            review="저는 살면서 이렇게 논리적으로 말을 잘하는 사람을 본 적이 없어요. 자기 일을 잘하는 건 그렇다고 해도 사람이 알게 모르게 따뜻한 건 반칙이에요."
-                        />
-                        <ReviewMemo
-                            className="bg-[#C6F6D5] w-[28%] -top-[190px] left-[55%] md:-top-[290px] md:left-[57%]"
-                            textColor="#22543D"
-                            name="@동료 박OO"
-                            review="꼼꼼하고 신뢰할 수 있는 팀원이에요!"
-                        />
+                        <div className="grid grid-cols-2 gap-4 h-full">
+                            {/* 왼쪽 열 */}
+                            <div className="space-y-4">
+                                <ReviewMemo
+                                    className="bg-[#A7E9AF]"
+                                    textColor="#1B5E20"
+                                    name="@천재교육 우OO"
+                                    review="프로젝트를 같이 하면서 책임감이 남다르다 라는 생각을 했습니다. 주어진 문제에 대한 해결 능력이 뛰어나며 회의나 기획적인 부분에서도 적극적으로 논리 정연하게 의견을 내고 좋은 결과물로 인도할 의견을 냅니다. 어떤 곳에서든 필요한 인재라고 생각합니다."
+                                />
+                                <ReviewMemo
+                                    className="bg-[#DFFFD6]"
+                                    textColor="#355E3B"
+                                    name="@천재교육 최OO"
+                                    review="프론트엔드 리더를 맡아주신 덕분에 저는 인프라와 다른 문제 상황에 더 집중할 수 있었어요. 특히 디자인과 관련된 부분에서는 디자이너에 버금가는 미적 감각과 프론트엔드에 대한 깊은 이해를 바탕으로 완성도를 높여 나가는 모습이 인상적이었습니다. 주도적으로 해결책을 찾아가고, 의견을 적극적으로 표현해 주셔서 정말 든든했습니다. 다음에도 함께 프로젝트 해요~!"
+                                />
+                                <ReviewMemo
+                                    className="bg-[#A7E9AF]"
+                                    textColor="#134E4A"
+                                    name="@동료 박OO"
+                                    review="꼼꼼하고 신뢰할 수 있는 팀원이에요!"
+                                />
+                            </div>
+
+                            {/* 오른쪽 열 */}
+                            <div className="space-y-4">
+                                <ReviewMemo
+                                    className="bg-[#B9FBC0]"
+                                    textColor="#00695C"
+                                    name="@천재교육 이OO"
+                                    review="맡은 일은 끝까지 책임지는 자세로, 빠진 기획도 먼저 찾아내고 팀과 조율해 반영했습니다.
+                                    화면 컴포넌트나 폴더 구조 등 개발 시 팀의 편의를 고려해 체계적으로 일했습니다.
+                                    회의에서 흐름이 어지러울 때 정확한 주제를 잡고 방향성을 정리해주는 역할을 했습니다.
+                                    정리에 강해 문서 정리는 대부분 맡았고, 팀원 모두가 신뢰할 만큼 일처리가 정확했습니다."
+                                />
+                                <ReviewMemo
+                                    className="bg-[#C6F6D5]"
+                                    textColor="#22543D"
+                                    name="@천재교육 정OO"
+                                    review="함께 일하는 게 정말 즐거워요!"
+                                />
+                                <ReviewMemo
+                                    className="bg-[#B2F2BB]"
+                                    textColor="#14532D"
+                                    name="@천재교육 김OO"
+                                    review="저는 살면서 이렇게 논리적으로 말을 잘하는 사람을 본 적이 없어요. 자기 일을 잘하는 건 그렇다고 해도 사람이 알게 모르게 따뜻한 건 반칙이에요."
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
