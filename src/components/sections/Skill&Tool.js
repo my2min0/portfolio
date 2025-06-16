@@ -11,6 +11,7 @@ const SkillAndTool = () => {
         {
             id: 1,
             title: "Programming Languages & Database",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-[30px] md:h-[30px]" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>,
             proficient: ["Java", "JavaScript", "Oracle SQL"],
             familiar: ["Python"],
             tried: ["MyBatis", "JDBC", "JPA"]
@@ -18,6 +19,7 @@ const SkillAndTool = () => {
         {
             id: 2,
             title: "Framework & Library",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-[30px] md:h-[30px]" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
             proficient: ["React.js", "Vue.js", "HTML", "CSS", "Spring Boot"],
             familiar: ["JSP", "Servlet"],
             tried: ["JWT"]
@@ -25,6 +27,7 @@ const SkillAndTool = () => {
         {
             id: 3,
             title: "Development Tools & Collaboration",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 md:w-[30px] md:h-[30px]" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>,
             proficient: ["GitHub", "Notion", "Visual Studio Code", "IntelliJ IDEA", "ERD Cloud", "SQL Developer"],
             familiar: ["Figma", "Eclipse"],
             tried: ["DBeaver", "Swaggeer"]
@@ -91,7 +94,7 @@ const SkillAndTool = () => {
             {/* Skill & Tool 메인 */}
             <div className="relative flex flex-col items-center justify-center">
                 {/* 카드와 화살표 */}
-                <div className="flex items-center justify-center w-full max-w-7xl gap-16 sm:gap-20 md:gap-24 lg:gap-28">
+                <div className="flex items-center justify-center w-full max-w-7xl gap-5 md:gap-24">
                     {/* 왼쪽 화살표 */}
                     <button onClick={handlePrev} disabled={isAnimating}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7AC8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -100,63 +103,78 @@ const SkillAndTool = () => {
                     </button>
 
                     {/* 카드들 */}
-                    <div className="relative w-[400px] h-[280px] sm:w-[600px] sm:h-[420px]
-                                    md:w-[720px] md:h-[504px] lg:w-[800px] lg:h-[560px]">
+                    <div className="relative w-[400px] h-[280px] -left-[10px] md:w-[720px] md:h-[400px]">
                         {cards.map((card, index) => (
                             <div
                                 key={ card.id }
-                                className={`absolute bg-white drop-shadow-lg w-full h-full rounded-2xl p-8 
-                                        border-[3px] border-[#89DFB7] transition-all duration-500 ease-out 
-                                        ${isAnimating ? 'pointer-events-none' : ''}`}
+                                className={`absolute bg-white drop-shadow-lg w-full h-full rounded-2xl border-[#A7D9C4] transition-all duration-500 ease-out ${isAnimating ? 'pointer-events-none' : ''}
+                                    p-3 border-[2px] 
+                                    md:p-8 md:border-[3px]`}
                                 style={ getCardStyle(index) }
                             >
                                 {/* 카드 내용 */}
                                 <div className="h-full">
-                                    <h2 className="flex flex-col items-center text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-6 text-gray-800">
-                                        { card.title }
-                                    </h2>
+                                    {/* 카드 헤더 */}
+                                    <div className="flex items-center gap-2 md:gap-3 border-b border-[#A7D9C4]
+                                        mb-3 pb-2
+                                        md:mb-6 md:pb-5">
+                                        { card.icon }
+                                        <h2 className="text-[#2A6353] font-bold text-lg md:text-2xl">
+                                            { card.title }
+                                        </h2>
+                                    </div>
+                                    
+                                    <div className="space-y-3 md:space-y-5">
+                                        {/* Proficient 섹션 */}
+                                        <div>
+                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                                <p className="font-semibold text-[#176C46] text-sm md:text-lg">● Proficient</p>
+                                                <span className="text-sm text-gray-500">({ card.proficient.length })</span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2">
+                                                {card.proficient.map((skill, index) => (
+                                                    <span key={index} className="bg-[#B6EFD1] text-[#176C46] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                        { skill }
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Familiar 섹션 */}
+                                        <div>
+                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                                <h4 className="font-semibold text-[#2C705B] text-sm md:text-lg">● Familiar</h4>
+                                                <span className="text-sm text-gray-500">({ card.familiar.length })</span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2">
+                                                {card.familiar.map((skill, index) => (
+                                                    <span key={index} className="bg-[#D2F5E6] text-[#377A65] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                        { skill }
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
 
-                                    {/* Proficient 섹션 */}
-                                    <div className="mb-4 w-full">
-                                        <h3 className="text-base md:text-lg font-semibold text-green-600 mb-2">
-                                            Proficient
-                                        </h3>
-                                        <div className="flex flex-wrap justify-center gap-2">
-                                            {card.proficient.map((skill, index) => (
-                                                <span key={index} className="bg-green-100 text-green-800 px-2 py-1 rounded-md text-sm">
-                                                    {skill}
-                                                </span>
-                                            ))}
+                                        {/* Tried 섹션 */}
+                                        <div>
+                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                                <h4 className="font-semibold text-[#537B6C] text-sm md:text-lg">● Tried</h4>
+                                                <span className="text-sm text-gray-500">({ card.tried.length })</span>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2">
+                                                {card.tried.map((skill, index) => (
+                                                    <span key={index} className="bg-[#E7FAF2] text-[#5F837A] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                        { skill }
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
+                                    
+                                    
 
-                                    {/* Familiar 섹션 */}
-                                    <div className="mb-4 w-full">
-                                        <h3 className="text-base md:text-lg font-semibold text-blue-600 mb-2">
-                                            Familiar
-                                        </h3>
-                                        <div className="flex flex-wrap justify-center gap-2">
-                                            {card.familiar.map((skill, index) => (
-                                                <span key={index} className="bg-blue-100 text-blue-800 px-2 py-1 rounded-md text-sm">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* Tried 섹션 */}
-                                    <div className="w-full">
-                                        <h3 className="text-base md:text-lg font-semibold text-gray-600 mb-2">
-                                            Tried
-                                        </h3>
-                                        <div className="flex flex-wrap justify-center gap-2">
-                                            {card.tried.map((skill, index) => (
-                                                <span key={index} className="bg-gray-100 text-gray-800 px-2 py-1 rounded-md text-sm">
-                                                    {skill}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                                    
+                                    
                                 </div>
                             </div>
                         ))}
