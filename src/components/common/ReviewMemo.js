@@ -11,8 +11,8 @@ const ReviewMemo = ({
             <p className={`text-[${textColor}] font-medium text-[10px] mb-1 md:text-sm md:mb-2`}>
                 {name}
             </p>
-            <p className="text-xs md:text-base leading-tight">
-                {review}
+            <p className="text-xs md:text-base leading-tight whitespace-pre-line">
+                {review.replace(/\\n/g, '\n')}
             </p>
         </div>
     );
