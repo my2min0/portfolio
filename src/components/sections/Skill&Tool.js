@@ -103,7 +103,7 @@ const SkillAndTool = () => {
                     </button>
 
                     {/* 카드들 */}
-                    <div className="relative w-[400px] h-[280px] -left-[10px] md:w-[720px] md:h-[400px]">
+                    <div className="relative w-[400px] h-[270px] -left-[10px] md:min-w-[720px] md:h-[400px]">
                         {cards.map((card, index) => (
                             <div
                                 key={ card.id }
@@ -119,7 +119,7 @@ const SkillAndTool = () => {
                                         mb-3 pb-2
                                         md:mb-6 md:pb-5">
                                         { card.icon }
-                                        <h2 className="text-[#2A6353] font-bold text-lg md:text-2xl">
+                                        <h2 className="text-[#2A6353] font-bold text-sm md:text-2xl">
                                             { card.title }
                                         </h2>
                                     </div>
@@ -128,12 +128,12 @@ const SkillAndTool = () => {
                                         {/* Proficient 섹션 */}
                                         <div>
                                             <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
-                                                <p className="font-semibold text-[#176C46] text-sm md:text-lg">● Proficient</p>
+                                                <p className="font-semibold text-[#176C46] text-xs md:text-lg">● Proficient</p>
                                                 <span className="text-sm text-gray-500">({ card.proficient.length })</span>
                                             </div>
                                             <div className="flex flex-wrap gap-2">
                                                 {card.proficient.map((skill, index) => (
-                                                    <span key={index} className="bg-[#B6EFD1] text-[#176C46] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                    <span key={index} className="bg-[#B6EFD1] text-[#176C46] px-[5px] py-[2px] md:px-3 md:py-1 rounded-full font-medium text-[10px] md:text-sm">
                                                         { skill }
                                                     </span>
                                                 ))}
@@ -143,12 +143,12 @@ const SkillAndTool = () => {
                                         {/* Familiar 섹션 */}
                                         <div>
                                             <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
-                                                <h4 className="font-semibold text-[#2C705B] text-sm md:text-lg">● Familiar</h4>
+                                                <h4 className="font-semibold text-[#2C705B] text-xs md:text-lg">● Familiar</h4>
                                                 <span className="text-sm text-gray-500">({ card.familiar.length })</span>
                                             </div>
                                             <div className="flex flex-wrap gap-2">
                                                 {card.familiar.map((skill, index) => (
-                                                    <span key={index} className="bg-[#D2F5E6] text-[#377A65] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                    <span key={index} className="bg-[#D2F5E6] text-[#377A65] px-[5px] py-[2px] md:px-3 md:py-1 rounded-full font-medium text-[10px] md:text-sm">
                                                         { skill }
                                                     </span>
                                                 ))}
@@ -158,12 +158,12 @@ const SkillAndTool = () => {
                                         {/* Tried 섹션 */}
                                         <div>
                                             <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
-                                                <h4 className="font-semibold text-[#537B6C] text-sm md:text-lg">● Tried</h4>
+                                                <h4 className="font-semibold text-[#537B6C] text-xs md:text-lg">● Tried</h4>
                                                 <span className="text-sm text-gray-500">({ card.tried.length })</span>
                                             </div>
                                             <div className="flex flex-wrap gap-2">
                                                 {card.tried.map((skill, index) => (
-                                                    <span key={index} className="bg-[#E7FAF2] text-[#5F837A] px-3 py-1 rounded-full font-medium text-xs md:text-sm">
+                                                    <span key={index} className="bg-[#E7FAF2] text-[#5F837A] px-[5px] py-[2px] md:px-3 md:py-1 rounded-full font-medium text-[10px] md:text-sm">
                                                         { skill }
                                                     </span>
                                                 ))}
