@@ -68,11 +68,11 @@ const AboutMe = () => {
                 <div className="mb-8">
                     <div className="flex flex-col items-center">
                         {/* 첫 번째 줄 3개 */}
-                        <div className="flex gap-2 md:gap-4 justify-center">
+                        <div className="flex gap-2 md:gap-4 justify-center mb-1">
                             {hashtags.slice(0, 3).map((tag, index) => (
                                 <span 
                                     key={index}
-                                    className="text-gray-700 font-medium text-xs md:text-base"
+                                    className="text-gray-700 font-medium text-sm md:text-base"
                                 >
                                     {tag}
                                 </span>
@@ -83,7 +83,7 @@ const AboutMe = () => {
                             {hashtags.slice(3, 5).map((tag, index) => (
                                 <span 
                                     key={index}
-                                    className="text-gray-700 font-medium text-xs md:text-base"
+                                    className="text-gray-700 font-medium text-sm md:text-base"
                                 >
                                     {tag}
                                 </span>
@@ -99,7 +99,7 @@ const AboutMe = () => {
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                         onClick={openModal}
-                        className="bg-white px-4 py-2 text-sm md:px-8 md:py-3 md:text-base rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                        className="bg-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     >
                         팀원 리뷰 보기
                     </button>
