@@ -95,22 +95,19 @@ const SkillAndTool = () => {
             <div className="relative flex flex-col items-center justify-center">
                 {/* 카드와 화살표 */}
                 <div className="flex items-center justify-center w-full max-w-7xl gap-5 md:gap-24">
-                    {/* 왼쪽 화살표 */}
-                    <button onClick={handlePrev} disabled={isAnimating}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7AC8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="m15 18-6-6 6-6"/>
-                        </svg>
-                    </button>
-
-                    {/* 카드들 */}
                     <div className="relative w-[400px] h-[270px] -left-[10px] md:min-w-[720px] md:h-[400px]">
                         {cards.map((card, index) => (
                             <div
                                 key={ card.id }
-                                className={`absolute bg-white drop-shadow-lg w-full h-full rounded-2xl border-[#A7D9C4] transition-all duration-500 ease-out ${isAnimating ? 'pointer-events-none' : ''}
+                                className={`absolute bg-white drop-shadow-lg w-full h-full rounded-2xl border-[#A7D9C4] transition-all duration-500 ease-out ${isAnimating ? 'pointer-events-none' : 'cursor-pointer'}
                                     p-3 border-[2px] 
                                     md:p-8 md:border-[3px]`}
                                 style={ getCardStyle(index) }
+                                onClick={() => !isAnimating && handleNext()}
+                                onTouchEnd={(e) => {
+                                    e.preventDefault();
+                                    !isAnimating && handleNext();
+                                }}
                             >
                                 {/* 카드 내용 */}
                                 <div className="h-full">
@@ -170,22 +167,10 @@ const SkillAndTool = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    
-
-                                    
-                                    
                                 </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* 오른쪽 화살표 */}
-                    <button onClick={handleNext} disabled={isAnimating}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7AC8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </div>
