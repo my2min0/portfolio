@@ -116,7 +116,7 @@ const SkillAndTool = () => {
                                 {/* 카드 내용 */}
                                 <div className="h-full">
                                     {/* 카드 헤더 */}
-                                    <div className="flex items-center gap-2 md:gap-3 border-b border-[#A7D9C4]
+                                    <div className="flex items-center gap-2 md:gap-3 border-b border-[#2A6353]
                                         mb-3 pb-2
                                         md:mb-6 md:pb-5">
                                         { card.icon }
