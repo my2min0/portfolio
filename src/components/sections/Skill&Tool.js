@@ -128,7 +128,7 @@ const SkillAndTool = () => {
                                     <div className="space-y-3 md:space-y-5">
                                         {/* Proficient 섹션 */}
                                         <div>
-                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                            <div className="flex items-center gap-2 mb-1 md:mb-3">
                                                 <p className="font-semibold text-[#176C46] text-xs md:text-lg">● Proficient</p>
                                                 <span className="text-sm text-gray-500">({ card.proficient.length })</span>
                                             </div>
@@ -143,7 +143,7 @@ const SkillAndTool = () => {
                                         
                                         {/* Familiar 섹션 */}
                                         <div>
-                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                            <div className="flex items-center gap-2 mb-1 md:mb-3">
                                                 <h4 className="font-semibold text-[#2C705B] text-xs md:text-lg">● Familiar</h4>
                                                 <span className="text-sm text-gray-500">({ card.familiar.length })</span>
                                             </div>
@@ -158,7 +158,7 @@ const SkillAndTool = () => {
 
                                         {/* Tried 섹션 */}
                                         <div>
-                                            <div className="flex itemzs-center gap-2 mb-1 md:mb-3">
+                                            <div className="flex items-center gap-2 mb-1 md:mb-3">
                                                 <h4 className="font-semibold text-[#537B6C] text-xs md:text-lg">● Tried</h4>
                                                 <span className="text-sm text-gray-500">({ card.tried.length })</span>
                                             </div>
