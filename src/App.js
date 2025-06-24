@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div className="App relative">
       <div
-        className="main-content relative z-20 drop-shadow-lg"
+        className="main-content relative z-20"
         style={{
           transform: `translateY(-${scrollProgress * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
