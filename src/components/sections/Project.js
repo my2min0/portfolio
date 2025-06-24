@@ -24,30 +24,26 @@ const Project = () => {
                     </div>
                 </MaskText>
             </div>
-            <div className="grid grid-cols-2 gap-2">
-                <div>
-                    <ProjectCard
-                        imgSrc="/images/Portfolio_Main.png"
-                        imgAlt="Portfolio"
-                        title="Portfolio"
-                        onCardClick={handleProjectClick}
-                    />
-                    <ProjectCard
-                        imgSrc="/images/천재의서재_Main.png"
-                        imgAlt="천재의 서재"
-                        title="천재의 서재"
-                        onCardClick={handleProjectClick}
-                    />
-                    
-                </div>
-                <div>
-                    <ProjectCard
-                        imgSrc="/images/GenieQ_Main.png"
-                        imgAlt="GenieQ"
-                        title="GenieQ"
-                        onCardClick={handleProjectClick}
-                    />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 justify-items-center">
+                <ProjectCard
+                    imgSrc="/images/Portfolio_Main.png"
+                    imgAlt="Portfolio"
+                    title="Portfolio"
+                    onCardClick={handleProjectClick}
+                />
+                <ProjectCard
+                    imgSrc="/images/천재의서재_Main.png"
+                    imgAlt="천재의 서재"
+                    title="천재의 서재"
+                    onCardClick={handleProjectClick}
+                />
+                <ProjectCard
+                    imgSrc="/images/GenieQ_Main.png"
+                    imgAlt="GenieQ"
+                    title="GenieQ"
+                    onCardClick={handleProjectClick}
+                />
+                <div></div>
             </div>
             
         </div>
