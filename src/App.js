@@ -13,11 +13,16 @@ const App = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
 
-      // 전체 페이지의 80% 지점에서 스크롤 시작
-      const transitionStartPoint = (documentHeight - windowHeight) * 0.8;
-      const transitionDistance = (documentHeight - windowHeight) * 0.2;
+      // 기존 섹션들의 실제 높이를 계산
+      const mainContent = document.querySelector('.main-content');
+      if (!mainContent) return;
+
+      const mainContentHeight = mainContent.scrollHeight;
+
+      // 마지막 섹션이 화면에 거의 다 보일 때부터 전환 시작
+      const transitionStartPoint = mainContentHeight - windowHeight * 1.5;
+      const transitionDistance = windowHeight;
 
       if (scrollY >= transitionStartPoint) {
         const progress = Math.min(1, (scrollY - transitionStartPoint) / transitionDistance);
@@ -27,16 +32,23 @@ const App = () => {
       }
     };
 
+    // 초기 로딩 후와 리사이즈 시에도 체크
+    const timeoutId = setTimeout(handleScroll, 100);
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     }
   }, []);
 
   return (
     <div className="App relative">
       <div
-        className="main-content relative z-20"
+        className="main-content relative z-20 bg-white"
         style={{
           transform: `translateY(-${scrollProgress * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
@@ -53,7 +65,6 @@ const App = () => {
       <div
         className="contact-section fixed inset-0 z-10"
         style={{
-          transform: `translateY(${(1 - scrollProgress) * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
         }}
       >
@@ -61,7 +72,7 @@ const App = () => {
       </div>
 
       {/* 스크롤 공간 확보 */}
-      <div style={{ height: '120vh' }}></div>
+      <div style={{ height: '100vh' }}/>
     </div>
   );
 };
