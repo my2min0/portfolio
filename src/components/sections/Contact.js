@@ -31,11 +31,13 @@ const Contact = () => {
         const angle = Math.atan2(deltaY, deltaX);
         const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
 
-        // 눈동자가 움직일 수 있는 최대 거리
-        const maxDistance = (eyeSize / 2) * 0.5;
+        // 눈동자가 50% 이상 보이도록 최대 거리 계산
+        const whiteRedius = eyeSize / 2;
+        const blackRedius = ( eyeSize * 0.7 ) / 2;
+        const maxDistance = whiteRedius - ( blackRedius * 0.8 );
 
         // 실제 움직일 거리
-        const constrainedDistance = Math.min(maxDistance, distance);
+        const constrainedDistance = Math.min(distance * 0.15, maxDistance);
 
         return {
             x: Math.cos(angle) * constrainedDistance,
@@ -53,22 +55,22 @@ const Contact = () => {
                             className="object-contain"
                         />
 
-                        <div className="absolute top-[40px] left-6">
-                            <div className="relative w-8 h-8 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[190px] left-[180px]">
+                            <div className="relative w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-6 h-6 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[55px] h-[55px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(80, 80, 32).x}px, ${calculatePupilPosition(80, 80, 32).y}px)`
+                                        transform: `translate(${calculatePupilPosition(300, 280, 70).x}px, ${calculatePupilPosition(300, 280, 70).y}px)`
                                     }}
                                 />
                             </div>
                         </div>
-                        <div className="absolute top-6 right-6">
-                            <div className="relative w-8 h-8 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[190px] right-[160px]">
+                            <div className="relative w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-6 h-6 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[55px] h-[55px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(120, 80, 32).x}px, ${calculatePupilPosition(120, 80, 32).y}px)`
+                                        transform: `translate(${calculatePupilPosition(300, 280, 70).x}px, ${calculatePupilPosition(300, 280, 70).y}px)`
                                     }}
                                 />
                             </div>
@@ -84,22 +86,22 @@ const Contact = () => {
                             className="object-contain"
                         />
 
-                        <div className="absolute top-4 left-4">
-                            <div className="relative w-6 h-6 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[190px] left-[150px]">
+                            <div className="relative w-[65px] h-[65px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-4 h-4 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[50px] h-[50px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(240, 60, 24).x}px, ${calculatePupilPosition(240, 60, 24).y}px)`
+                                        transform: `translate(${calculatePupilPosition(400, 280, 65).x}px, ${calculatePupilPosition(400, 280, 65).y}px)`
                                     }}
                                 />
                             </div>
                         </div>
-                        <div className="absolute top-4 right-4">
-                            <div className="relative w-6 h-6 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[190px] right-[170px]">
+                            <div className="relative w-[65px] h-[65px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-4 h-4 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[50px] h-[50px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(280, 60, 24).x}px, ${calculatePupilPosition(280, 60, 24).y}px)`
+                                        transform: `translate(${calculatePupilPosition(400, 280, 65).x}px, ${calculatePupilPosition(400, 280, 65).y}px)`
                                     }}
                                 />
                             </div>
@@ -115,22 +117,22 @@ const Contact = () => {
                             className="object-contain"
                         />
 
-                        <div className="absolute top-2 left-6">
-                            <div className="relative w-6 h-6 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[170px] right-[210px]">
+                            <div className="relative w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-4 h-4 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[45px] h-[45px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(180, 140, 24).x}px, ${calculatePupilPosition(180, 140, 24).y}px)`
+                                        transform: `translate(${calculatePupilPosition(350, 450, 60).x}px, ${calculatePupilPosition(350, 450, 60).y}px)`
                                     }}
                                 />
                             </div>
                         </div>
-                        <div className="absolute top-2 right-6">
-                            <div className="relative w-6 h-6 bg-white rounded-full border-2 border-gray-300 flex items-center justify-center overflow-hidden">
+                        <div className="absolute top-[170px] right-[150px]">
+                            <div className="relative w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
-                                    className="w-4 h-4 bg-black rounded-full transition-transform duration-100 ease-out"
+                                    className="w-[45px] h-[45px] bg-black rounded-full transition-transform duration-100 ease-out"
                                     style={{
-                                        transform: `translate(${calculatePupilPosition(220, 140, 24).x}px, ${calculatePupilPosition(220, 140, 24).y}px)`
+                                        transform: `translate(${calculatePupilPosition(350, 450, 60).x}px, ${calculatePupilPosition(350, 450, 60).y}px)`
                                     }}
                                 />
                             </div>
