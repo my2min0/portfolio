@@ -43,10 +43,10 @@ const Contact = () => {
         }
     }
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 p-8" ref={containerRef}>
-            <div className="relative grid grid-cols-12 grid-rows-5 gap-0 items-center justify-center">
+        <div className="h-screen bg-gray-100 p-8" ref={containerRef}>
+            <div className="relative w-full h-full grid grid-cols-12 grid-rows-2 gap-0 items-center justify-center">
                 {/* 초록색 클로버 */}
-                <div className="col-span-4 row-start-1 flex justify-center items-end pb-2">
+                <div className="w-[480px] col-span-6 row-start-1 ml-[90px] -mb-[50px] -rotate-6 flex justify-center items-end pb-2">
                     <div className="relative">
                         <img 
                             src="/images/clover.png" alt="clover" 
@@ -77,7 +77,7 @@ const Contact = () => {
                 </div>
 
                 {/* 빨간색 하트 */}
-                <div className="col-span-4 col-start-5 row-start-1 flex justify-center items-end pb-2">
+                <div className="w-[450px] col-span-4 col-start-7 row-start-1 -ml-[50px] mb-[50px] rotate-6 flex justify-center items-end pb-2">
                     <div className="relative">
                         <img 
                             src="/images/heart.png" alt="heart" 
@@ -108,7 +108,7 @@ const Contact = () => {
                 </div>
 
                 {/* 하늘색 돌 */}
-                <div className="col-span-4 col-start-4 row-start-2 flex justify-center items-start">
+                <div className="w-[450px] col-span-4 col-start-4 row-start-2 ml-[80px] flex justify-center items-start">
                     <div className="relative">
                         <img 
                             src="/images/rock.png" alt="rock" 
@@ -137,10 +137,13 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-10">
+                    <h1 className="font-black text-[90pt] text-black tracking-wide text-center">
+                        CONTACT ME !
+                    </h1>
+                </div>
             </div>
-            {/* <div className="col-span-12 row-span-3 row-start-2 flex items-center justify-center">
-                <h1 className="font-black text-[100pt] text-gray-400 tracking-wide text-center">CONTACT ME !</h1>
-            </div> */}
         </div>
     )
 }
