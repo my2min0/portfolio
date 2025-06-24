@@ -1,10 +1,10 @@
 import React from "react";
 
-const ProjectCard = ({ imgSrc, imgAlt, title }) => {
+const ProjectCard = ({ imgSrc, imgAlt, title, onCardClick }) => {
 
     return (
         <div className="flex justify-center">
-        <div className="cursor-pointer transform transition-transform duration-300 hover:scale-[102%]">
+        <div className="cursor-pointer transform transition-transform duration-300 hover:scale-[102%]" onClick={onCardClick}>
             <div className="w-[360px] xl:w-[520px] bg-white drop-shadow-xl rounded-2xl m-5">
                 {/* 맥북 사파리 st 헤더 */}
                 <div className="bg-gray-200 rounded-t-2xl p-2 pl-3 w-full group flex items-center gap-2">
