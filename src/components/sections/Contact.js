@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="h-screen bg-gray-100 p-8 flex items-center justify-center" ref={containerRef}>
             <div className="relative">
                 <h1 
-                    className="relative w-[900px] font-black text-[30pt] md:text-[90pt] text-black tracking-wide text-center z-20 hover:scale-105 active:scale-100 transition-all duration-300 cursor-pointer" 
+                    className="relative w-[1000px] font-black text-[30pt] md:text-[90pt] text-black tracking-wide text-center z-20 hover:scale-105 active:scale-100 transition-all duration-300 cursor-pointer" 
                     onClick={() => setIsModalOpen(true)}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -61,7 +61,7 @@ const Contact = () => {
 
                 {/* 초록색 클로버 */}
                 <div className="absolute -rotate-6 z-10
-                    -top-[400px] left-[290px] w-[400px] md:-top-[270px] md:left-0 md:w-[480px]">
+                    -top-[420px] left-[310px] w-[400px] md:-top-[280px] md:left-[50px] md:w-[480px]">
                     <div className="relative">
                         <img 
                             src="/images/clover.png" alt="clover" 
@@ -92,7 +92,7 @@ const Contact = () => {
                 </div>
 
                 {/* 빨간색 하트 */}
-                <div className="absolute -top-[120px] left-[170px] w-[400px] md:-top-[300px] md:left-[460px] md:w-[450px] rotate-6 z-10">
+                <div className="absolute -top-[140px] left-[200px] w-[400px] md:-top-[300px] md:left-[460px] md:w-[450px] rotate-6 z-10">
                     <div className="relative">
                         <img 
                             src="/images/heart.png" alt="heart" 
@@ -123,7 +123,7 @@ const Contact = () => {
                 </div>
 
                 {/* 하늘색 돌 */}
-                <div className="absolute top-[100px] right-[180px] w-[400px] md:top-[10px] md:right-[145px] md:w-[450px] z-10">
+                <div className="absolute top-[80px] right-[240px] w-[400px] md:top-[10px] md:right-[240px] md:w-[450px] z-10">
                     <div className="relative">
                         <img 
                             src="/images/rock.png" alt="rock" 
