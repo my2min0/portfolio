@@ -1,57 +1,64 @@
 import React from "react";
+import LeftMsg from "./LeftMsg";
+import RightMsg from "./\bRightMsg";
 
 const ContactModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="relative bg-white rounded-2xl max-w-md aspect-[16/12] md:max-w-2xl md:aspect-[16/10] w-full mx-4 shadow-2xl flex flex-col">
-                {/* 맥북 사파리 스타일 헤더 */}
-                <div className="bg-gray-200 rounded-t-2xl p-3 w-full group">
-                    <div className="flex items-center space-x-2" onClick={onClose}>
-                        <div className="relative w-4 h-4 rounded-full bg-red-400 hover:bg-red-500 cursor-pointer transition-colors">
-                            <div className="absolute inset-0 text-red-900 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#8B0000" className="size-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="relative w-4 h-4 rounded-full bg-yellow-500 hover:bg-yellow-600 cursor-pointer transition-colors">
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#777711" className="size-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="relative w-4 h-4 rounded-full bg-green-500 hover:bg-green-600 cursor-pointer transition-colors">
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#228B22" className="size-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-                                </svg>
-                            </div>
-                        </div>
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50" onClick={onClose}>
+            <div className="relative rounded-2xl max-w-md md:max-w-md w-full mx-4 shadow-2xl flex flex-col bg-gradient-to-b from-[#E0EEE0] to-[#A0DDA0]">
+                {/* 아이폰 카톡 화면 */}
+                <div className="rounded-t-2xl p-3 flex justify-between">
+                    <div className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                        <p className="text-lg">999+</p>
+                    </div>
+
+                    <div className="flex items-center">
+                        <p className="text-xl">My Info</p>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
                     </div>
                 </div>
 
-                {/* 연락처 정보 메인 공간 */}
-                <div className="flex-1 rounded-b-2xl overflow-y-auto p-6">
-                    <div className="space-y-6">
-                        {/* 이메일 */}
-                        <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
-                            <h3 className="font-bold text-blue-800 mb-2">Email</h3>
-                            <p className="text-blue-700">ffrf1234tina@gmail.com</p>
+                <div className="p-4">
+                    <div className="flex justify-end gap-2 mb-1">
+                        <div className="relative max-w-xs bg-white/70 text-base text-gray-800 px-4 py-2 rounded-2xl rounded-br-none shadow">
+                        궁금한 점이 있으시면
                         </div>
+                    </div>
 
-                        {/* 전화번호 */}
-                        <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-400">
-                            <h3 className="font-bold text-green-800 mb-2">Phone</h3>
-                            <p className="text-green-700">010-4098-4045</p>
-                        </div>
+                    <RightMsg message="아래 연락처로 연락주세요!"/>
+                    <LeftMsg message="E-mail"/>
+                    <RightMsg message="0000@gmail.com"/>
+                    <LeftMsg message="phone"/>
+                    <RightMsg message="010-0000-0000"/>
+                    <LeftMsg message="GitHub"/>
+                    <RightMsg message="https://github.com/0000"/>
+                </div>
 
-                        {/* GitHub */}
-                        <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
-                            <h3 className="font-bold text-gray-800 mb-2">GitHub</h3>
-                            <p className="text-gray-700">github.com/yourusername</p>
+                <div className="flex items-center justify-between bg-white/90 p-2 rounded-b-2xl">
+                    <div className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-300 text-gray-600 text-lg font-medium">
+                        +
+                    </div>
+                    
+                    <div className="flex-1 flex items-center justify-between bg-gray-200 rounded-full mx-2 px-4 py-2">
+                        <span className="text-gray-500 text-sm">메시지 입력</span>
+                        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-400 text-white text-xs">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                        </svg>
+
                         </div>
                     </div>
                 </div>
