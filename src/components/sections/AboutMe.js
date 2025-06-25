@@ -3,9 +3,8 @@ import TeamReviewModal from "./TeamReviewModal";
 import MaskText from "../common/MaskText";
 import Clover from "../common/Clover";
 
-const AboutMe = () => {
+const AboutMe = ({ onOpenModal }) => {
     const [ isHovered, setIsHovered ] = useState(false);
-    const [ isModalOpen, setIsModalOpen ] = useState(false);
 
     const hashtags = [
         "#문제_해결_능력",
@@ -14,29 +13,6 @@ const AboutMe = () => {
         "#풀스택_교육_이수",
         "#책임감"
     ];
-
-    useEffect(() => {
-        if (isModalOpen) {
-            // 모달이 열릴 때 스크롤 방지
-            document.body.style.overflow = "hidden";
-        } else {
-            // 모달이 닫힐 때 스크롤 복원
-            document.body.style.overflow = "unset";
-        }
-
-        // 컴포넌트 언마운트 시 스크롤 복원
-        return () => {
-            document.body.style.overflow = "unset";
-        };
-    }, [isModalOpen]);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    }
 
     return (
         <div className="min-h-[80vh] flex flex-col pt-32 md:pt-20 px-4">
@@ -98,15 +74,12 @@ const AboutMe = () => {
                     <button
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
-                        onClick={openModal}
+                        onClick={onOpenModal}
                         className="bg-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                     >
                         팀원 리뷰 보기
                     </button>
                 </div>
-
-                {/* 팀원 리뷰 모달 */}
-                <TeamReviewModal isOpen={isModalOpen} onClose={closeModal} />
             </div>
         </div>
     )

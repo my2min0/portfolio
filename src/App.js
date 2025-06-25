@@ -5,9 +5,11 @@ import AboutMe from './components/sections/AboutMe';
 import SkillAndTool from './components/sections/Skill&Tool';
 import Project from './components/sections/Project';
 import Contact from './components/sections/Contact';
+import TeamReviewModal from './components/sections/TeamReviewModal';
 
 const App = () => {
   const [ scrollProgress, setScrollProgress ] = useState(0);
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +58,7 @@ const App = () => {
       >
         <AnimatedBackground>
           <LandingPage />
-          <AboutMe />
+          <AboutMe onOpenModal={() => setIsModalOpen(true)} />
           <SkillAndTool />
           <Project />
         </AnimatedBackground>
@@ -70,6 +72,11 @@ const App = () => {
       >
         <Contact />
       </div>
+
+      <TeamReviewModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
 
       {/* 스크롤 공간 확보 */}
       <div style={{ height: '100vh' }}/>
