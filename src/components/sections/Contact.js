@@ -51,7 +51,7 @@ const Contact = () => {
         <div className="h-screen bg-gray-100 p-8 flex items-center justify-center" ref={containerRef}>
             <div className="relative">
                 <h1 
-                    className="relative w-[900px] font-black text-[90pt] text-black tracking-wide text-center z-20 hover:scale-105 active:scale-100 transition-all duration-300 cursor-pointer" 
+                    className="relative w-[900px] font-black text-[30pt] md:text-[90pt] text-black tracking-wide text-center z-20 hover:scale-105 active:scale-100 transition-all duration-300 cursor-pointer" 
                     onClick={() => setIsModalOpen(true)}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
@@ -60,14 +60,15 @@ const Contact = () => {
                 </h1>
 
                 {/* 초록색 클로버 */}
-                <div className="absolute -top-[270px] w-[480px] -rotate-6 z-10">
+                <div className="absolute -rotate-6 z-10
+                    -top-[400px] left-[290px] w-[400px] md:-top-[270px] md:left-0 md:w-[480px]">
                     <div className="relative">
                         <img 
                             src="/images/clover.png" alt="clover" 
                             className="object-contain"
                         />
 
-                        <div className="absolute top-[190px] left-[180px]">
+                        <div className="absolute top-[160px] left-[135px] md:top-[190px] md:left-[180px]">
                             <div className="relative w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
                                     className="w-[55px] h-[55px] bg-black rounded-full transition-transform duration-100 ease-out"
@@ -77,7 +78,7 @@ const Contact = () => {
                                 />
                             </div>
                         </div>
-                        <div className="absolute top-[190px] right-[160px]">
+                        <div className="absolute top-[160px] right-[125px] md:top-[190px] md:right-[160px]">
                             <div className="relative w-[70px] h-[70px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
                                     className="w-[55px] h-[55px] bg-black rounded-full transition-transform duration-100 ease-out"
@@ -91,14 +92,14 @@ const Contact = () => {
                 </div>
 
                 {/* 빨간색 하트 */}
-                <div className="absolute -top-[300px] -right-[0px] w-[450px] rotate-6 z-10">
+                <div className="absolute -top-[120px] left-[170px] w-[400px] md:-top-[300px] md:left-[460px] md:w-[450px] rotate-6 z-10">
                     <div className="relative">
                         <img 
                             src="/images/heart.png" alt="heart" 
                             className="object-contain"
                         />
 
-                        <div className="absolute top-[190px] left-[150px]">
+                        <div className="absolute top-[180px] left-[130px] md:top-[190px] md:left-[150px]">
                             <div className="relative w-[65px] h-[65px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
                                     className="w-[50px] h-[50px] bg-black rounded-full transition-transform duration-100 ease-out"
@@ -108,7 +109,7 @@ const Contact = () => {
                                 />
                             </div>
                         </div>
-                        <div className="absolute top-[190px] right-[170px]">
+                        <div className="absolute top-[180px] right-[140px] md:top-[190px] md:right-[170px]">
                             <div className="relative w-[65px] h-[65px] bg-white rounded-full flex items-center justify-center overflow-hidden">
                                 <div 
                                     className="w-[50px] h-[50px] bg-black rounded-full transition-transform duration-100 ease-out"
@@ -122,7 +123,7 @@ const Contact = () => {
                 </div>
 
                 {/* 하늘색 돌 */}
-                <div className="absolute top-[10px] right-[145px] w-[450px] z-10">
+                <div className="absolute top-[100px] right-[180px] w-[400px] md:top-[10px] md:right-[145px] md:w-[450px] z-10">
                     <div className="relative">
                         <img 
                             src="/images/rock.png" alt="rock" 
