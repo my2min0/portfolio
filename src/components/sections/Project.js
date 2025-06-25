@@ -25,6 +25,13 @@ const Project = () => {
             imgAlt: "천재의 서재",
             title: "천재의 서재",
             url: "https://www.notion.so/1e234783aea980c49e8de117da621b92?source=copy_link"
+        },
+        {
+            id: "PlaNa",
+            imgSrc: "/images/plana_main.png",
+            imgAlt: "PlaNa",
+            title: "PlaNa",
+            url: "https://www.notion.so/PlaNa-21d34783aea980f9af0acfca47bf9e9f?source=copy_link"
         }
     ];
 
