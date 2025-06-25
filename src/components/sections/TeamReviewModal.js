@@ -74,8 +74,8 @@ const TeamReviewModal = ({ isOpen, onClose }) => {
                                 <ReviewMemo
                                     className="bg-[#A7E9AF]"
                                     textColor="#134E4A"
-                                    name="@천재교육 강사님 유OO"
-                                    review="꼼꼼하고 신뢰할 수 있는 학생이에요!"
+                                    name="@천재교육 유OO 강사님"
+                                    review="과업 분석과 계획 수립 능력이 뛰어나며, 책임감이 강하고 의사소통 능력이 탁월한 인재입니다. 또한 디자인 감각과 구현 능력 역시 우수한 학생입니다."
                                 />
                                 <ReviewMemo
                                     className="bg-[#B2F2BB]"
