@@ -39,12 +39,12 @@ const ContactModal = ({ isOpen, onClose }) => {
                     </div>
 
                     <RightMsg message="아래 연락처로 연락주세요!"/>
-                    <LeftMsg message="E-mail"/>
-                    <RightMsg message="0000@gmail.com"/>
-                    <LeftMsg message="phone"/>
-                    <RightMsg message="010-0000-0000"/>
-                    <LeftMsg message="GitHub"/>
-                    <RightMsg message="https://github.com/0000"/>
+                    <LeftMsg message="📧 E-mail"/>
+                    <RightMsg message="ffrf1234tina@gmail.com"/>
+                    <LeftMsg message="📱 phone"/>
+                    <RightMsg message="010-4098-4045"/>
+                    <LeftMsg message="🔗 GitHub"/>
+                    <RightMsg message="https://github.com/my2min0"/>
                 </div>
 
                 <div className="flex items-center justify-between bg-white/90 p-2 rounded-b-2xl">
