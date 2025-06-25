@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import TeamReviewModal from "./TeamReviewModal";
+import React, { useState } from "react";
 import MaskText from "../common/MaskText";
 import Clover from "../common/Clover";
 
