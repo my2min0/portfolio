@@ -7,6 +7,7 @@ const MaskText = ({
 }) => {
     const [ mousePosition, setMousePosition ] = useState({ x: 0, y: 0 });
     const [ isHovering, setIsHovering ] = useState(false);
+    const [ isTouching, setIsTouching ] = useState(false);
     const textRef = useRef(null);
 
     // 위치 업데이트 공통 함수
@@ -19,30 +20,49 @@ const MaskText = ({
         }
     };
 
-    // 마우스 이동 이벤트 핸들러
+    // 마우스 이벤트 핸들러
     const handleMouseMove = (e) => {
-        updatePosition(e.clientX, e.clientY);
+        if (!isTouching) { // 터치 중이 아닐 때만 마우스 이벤트 처리
+            updatePosition(e.clientX, e.clientY);
+        }
     };
+    
     const handleMouseEnter = () => {
-        setIsHovering(true);
+        if (!isTouching) {
+            setIsHovering(true);
+        }
     };
+    
     const handleMouseLeave = () => {
-        setIsHovering(false);
+        if (!isTouching) {
+            setIsHovering(false);
+        }
     };
 
     // 터치 이벤트 핸들러
-    const handleTouchMove = (e) => {
-        e.preventDefault(); // 스크롤 방지
-        const touch = e.touches[0];
-        updatePosition(touch.clientX, touch.clientY);
-    };
     const handleTouchStart = (e) => {
+        setIsTouching(true);
         setIsHovering(true);
         const touch = e.touches[0];
         updatePosition(touch.clientX, touch.clientY);
+        // preventDefault를 제거하여 스크롤 허용
     };
+
+    const handleTouchMove = (e) => {
+        if (isTouching) {
+            const touch = e.touches[0];
+            updatePosition(touch.clientX, touch.clientY);
+            // 마스크 효과만 업데이트하고 스크롤은 방해하지 않음
+        }
+    };
+    
     const handleTouchEnd = () => {
+        setIsTouching(false);
         setIsHovering(false);
+        // 터치 종료 후 약간의 지연을 두어 마우스 이벤트와 충돌 방지
+        setTimeout(() => {
+            setIsTouching(false);
+        }, 100);
     };
 
     // 마스크 효과 스타일
@@ -64,9 +84,12 @@ const MaskText = ({
             onMouseMove={handleMouseMove}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            onTouchMove={handleTouchMove}
             onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            style={{
+                touchAction: 'pan-y' // 세로 스크롤은 허용, 가로 제스처는 제한
+            }}
         >
             {/* 첫 번째 레이어 - 기본 텍스트 */}
             <div 
