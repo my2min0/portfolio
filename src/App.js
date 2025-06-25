@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import LandingPage from './components/sections/LandingPage';
-import AnimatedBackground from './components/common/AnimatedBackground';
 import AboutMe from './components/sections/AboutMe';
 import SkillAndTool from './components/sections/Skill&Tool';
 import Project from './components/sections/Project';
@@ -50,18 +49,17 @@ const App = () => {
   return (
     <div className="App relative">
       <div
-        className="main-content relative z-20 bg-white"
+        className="main-content relative z-20
+        bg-gradient-to-tr from-[#EBFFE2] to-[#C1FFD3]"
         style={{
           transform: `translateY(-${scrollProgress * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
         }}
       >
-        <AnimatedBackground>
-          <LandingPage />
-          <AboutMe onOpenModal={() => setIsModalOpen(true)} />
-          <SkillAndTool />
-          <Project />
-        </AnimatedBackground>
+        <LandingPage />
+        <AboutMe onOpenModal={() => setIsModalOpen(true)} />
+        <SkillAndTool />
+        <Project />
       </div>
 
       <div
