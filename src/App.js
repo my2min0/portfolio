@@ -54,6 +54,7 @@ const App = () => {
         style={{
           transform: `translateY(-${scrollProgress * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
+          touchAction: 'pan-y', // 세로 스크롤은 허용, 가로 제스처는 제한
         }}
       >
         <LandingPage />
