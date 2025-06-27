@@ -50,7 +50,7 @@ const App = () => {
     <div className="App relative">
       <div
         className="main-content relative z-20
-        bg-gradient-to-tr from-[#EBFFE2] to-[#C1FFD3]"
+        bg-gradient-to-tr from-[#B0F1C9] via-[#C9F5DA] to-[#B9F1B7]"
         style={{
           transform: `translateY(-${scrollProgress * 100}vh)`,
           transition: scrollProgress > 0 ? 'transform 0.1s ease-out' : 'none',
