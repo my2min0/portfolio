@@ -79,7 +79,7 @@ const SkillAndTool = () => {
     };
 
     return (
-        <div className="min-h-[100vh] flex flex-col pt-32 md:pt-20 px-4 pb-20">
+        <div className="min-h-[80vh] flex flex-col pt-32 md:pt-20 px-4 pb-20">
             <div className="flex">
                 {/* 상단 제목 - 마스크 효과 */}
                 <MaskText 
