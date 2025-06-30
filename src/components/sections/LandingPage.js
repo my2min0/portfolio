@@ -18,6 +18,9 @@ const LandingPage = () => {
                 }
             `}</style>
             <div className="max-w-4xl mx-auto text-center">
+                <div className="text-center text-green-500">
+                    글자 위로 마우스를 움직여보세요 !
+                </div>
                 {/* Front-End 큰 제목 */}
                 <MaskText
                     className="mb-8 md:mb-1 z-10"
