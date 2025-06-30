@@ -11,19 +11,19 @@ const SkillAndTool = () => {
     const cards = [
         {
             id: 1,
-            title: "Programming Languages & Database",
+            title: "Frontend",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>,
-            proficient: ["Java", "JavaScript", "HTML", "CSS", "Oracle SQL"],
-            familiar: ["Python"],
-            tried: ["JDBC"]
+            proficient: ["JavaScript", "HTML", "CSS", "React.js", "Vue.js", "Tailwind CSS"],
+            familiar: ["BootStrap"],
+            tried: ["JSP"]
         },
         {
             id: 2,
-            title: "Framework & Library",
+            title: "Backend",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
-            proficient: ["React.js", "Vue.js", "Spring Boot", "Tailwind CSS"],
-            familiar: ["JSP", "Servlet", "Bootstrap"],
-            tried: ["MyBatis", "JWT", "JPA"]
+            proficient: ["Java", "Oracle SQL"],
+            familiar: ["Python", "Spring Boot"],
+            tried: ["MyBatis", "Servlet", "JPA"]
         },
         {
             id: 3,
