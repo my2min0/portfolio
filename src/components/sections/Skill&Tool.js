@@ -19,19 +19,19 @@ const SkillAndTool = () => {
         },
         {
             id: 2,
-            title: "Backend",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
-            proficient: ["Java", "Oracle SQL"],
-            familiar: ["Python", "Spring Boot"],
-            tried: ["MyBatis", "Servlet", "JPA"]
-        },
-        {
-            id: 3,
             title: "Development Tools & Collaboration",
-            icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>,
+            icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-icon lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
             proficient: ["GitHub", "Notion", "Visual Studio Code", "IntelliJ IDEA", "ERD Cloud", "SQL Developer"],
             familiar: ["Figma", "Eclipse"],
             tried: ["DBeaver", "Swaggeer"]
+        },
+        {
+            id: 3,
+            title: "Backend",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench-icon lucide-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>,
+            proficient: ["Java", "Oracle SQL"],
+            familiar: ["Python", "Spring Boot"],
+            tried: ["MyBatis", "Servlet", "JPA"]
         }
     ];
 
