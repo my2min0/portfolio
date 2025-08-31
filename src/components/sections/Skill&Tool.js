@@ -13,8 +13,8 @@ const SkillAndTool = () => {
             id: 1,
             title: "Frontend",
             icon: <svg xmlns="http://www.w3.org/2000/svg" width="24px" viewBox="0 0 24 24" fill="none" stroke="#2E6F60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-icon lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>,
-            proficient: ["JavaScript", "HTML", "CSS", "React.js", "Vue.js", "Tailwind CSS"],
-            familiar: ["BootStrap"],
+            proficient: ["JavaScript", "HTML", "CSS", "React.js", "Vue.js", "Tailwind CSS", "SCSS", "TypeScript"],
+            familiar: ["BootStrap", "Styled-components", "jQuery"],
             tried: ["JSP"]
         },
         {
